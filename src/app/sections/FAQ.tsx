@@ -1,133 +1,126 @@
 "use client";
 
 import { useState } from "react";
+import { Plus, Minus } from "lucide-react";
 
 interface FAQItem {
-  id: number;
   question: string;
   answer: string;
 }
 
 export default function FAQ() {
-  const [openId, setOpenId] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqData: FAQItem[] = [
     {
-      id: 1,
-      question: "Qual é o tempo médio de entrega?",
+      question: "O que é uma vitrine digital da Next Commerce?",
       answer:
-        "Nosso tempo médio de entrega varia entre 35 e 45 minutos, dependendo da sua região e do dia da semana. No momento do fechamento do pedido pelo WhatsApp, nossa equipe informa o tempo exato estimado.",
+        "É uma página profissional feita para apresentar seu negócio de forma moderna e levar clientes direto para o WhatsApp. Ela é rápida, funciona muito bem no celular e é pensada para aumentar contatos e pedidos.",
     },
     {
-      id: 2,
-      question:
-        "Vocês cobram taxa de entrega? Como ela é calculada?",
+      question: "Preciso pagar mensalidade?",
       answer:
-        "Sim. A taxa é calculada com base na distância entre a pizzaria e o endereço de entrega. Para bairros vizinhos, frequentemente oferecemos taxa reduzida ou promoções especiais.",
+        "Temos opções sem mensalidade, onde você paga apenas pelo desenvolvimento da vitrine. Também oferecemos manutenção opcional para quem quiser suporte, atualizações e melhorias contínuas.",
     },
     {
-      id: 3,
-      question:
-        "Quais são as formas de pagamento aceitas?",
+      question: "Em quanto tempo meu projeto fica pronto?",
       answer:
-        "Aceitamos Pix, cartões de crédito e débito das principais bandeiras e vale-refeição (Alelo, Sodexo e Ticket). Consulte disponibilidade no atendimento.",
+        "O prazo médio é de 5 a 7 dias úteis após recebermos as informações do seu negócio, como fotos, textos e referências.",
     },
     {
-      id: 4,
-      question:
-        "Como funciona a massa de fermentação natural de 48 horas?",
+      question: "Serve para qualquer tipo de negócio?",
       answer:
-        "Nossa massa passa por um processo de maturação lenta de até 48 horas sob temperatura controlada. Isso garante uma pizza mais leve, bordas aeradas e sabor muito mais intenso.",
+        "Sim. Funciona muito bem para restaurantes, salões, clínicas, lojas, prestadores de serviço e qualquer empresa que use o WhatsApp como principal canal de atendimento.",
     },
     {
-      id: 5,
-      question: "Posso fazer um pedido agendado?",
+      question: "Vou conseguir editar depois?",
       answer:
-        "Sim! Pelo WhatsApp você pode agendar horário de entrega ou retirada, ideal para reuniões, festas e finais de semana.",
+        "Depende do plano escolhido. Podemos entregar uma estrutura simples para ajustes básicos ou cuidar das alterações para você.",
     },
   ];
 
-  const toggleFAQ = (id: number): void => {
-    setOpenId((prev) => (prev === id ? null : id));
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <section className="w-full bg-[#F5F0E6] py-16 md:py-24">
-      <div className="mx-auto max-w-4xl px-6 lg:px-8">
-        
+    <section
+      id="faq"
+      className="w-full border-t border-[#110B24] bg-[#07040E] py-24"
+    >
+      <div className="mx-auto max-w-3xl px-6">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <span className="text-sm font-bold uppercase tracking-wider text-[#D64527]">
+        <div className="mb-16 text-center">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#6b03f6]">
             Dúvidas Frequentes
           </span>
 
-          <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-[#2C4233] sm:text-4xl">
-            Ficou com alguma{" "}
-            <span className="font-medium text-[#2C4233]/70">
-              dúvida?
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[#F8F7FA] sm:text-4xl">
+            Perguntas{" "}
+            <span className="text-[#36f631]">
+              respondidas
             </span>
           </h2>
+
+          <p className="mt-4 text-sm text-[#A39CB5] sm:text-base">
+            Algumas dúvidas comuns antes de começar seu projeto.
+          </p>
         </div>
 
-        {/* Accordion */}
+        {/* FAQ */}
         <div className="space-y-4">
-          {faqData.map((item) => {
-            const isOpen = openId === item.id;
+          {faqData.map((item, index) => {
+            const isOpen = openIndex === index;
 
             return (
-              <article
-                key={item.id}
-                className="overflow-hidden rounded-2xl border border-[#2C4233]/5 bg-white shadow-sm transition-all duration-300 hover:shadow-md"
+              <div
+                key={item.question}
+                className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
+                  isOpen
+                    ? "border-[#6b03f6]/30 bg-[#110B24]/40"
+                    : "border-[#110B24] bg-[#110B24]/10 hover:border-[#6b03f6]/20"
+                }`}
               >
-                {/* Pergunta */}
                 <button
-                  onClick={() => toggleFAQ(item.id)}
-                  className="flex w-full items-center justify-between gap-4 p-5 text-left transition-colors duration-300 hover:bg-[#2C4233]/5 sm:p-6"
+                  onClick={() => toggleFAQ(index)}
                   aria-expanded={isOpen}
-                  aria-controls={`faq-content-${item.id}`}
+                  aria-controls={`faq-content-${index}`}
+                  className="flex w-full items-center justify-between gap-4 p-6 text-left"
                 >
-                  <span className="text-base font-bold text-[#2C4233] sm:text-lg">
+                  <span className="text-base font-bold tracking-tight text-[#F8F7FA] sm:text-lg">
                     {item.question}
                   </span>
 
-                  {/* Ícone */}
-                  <span
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#D64527]/10 text-[#D64527] transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
+                  <div
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-all duration-300 ${
+                      isOpen
+                        ? "border-[#36f631]/30 bg-[#07040E] text-[#36f631]"
+                        : "border-[#110B24] bg-[#07040E] text-[#A39CB5]"
                     }`}
                   >
-                    <svg
-                      className="h-4 w-4"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </span>
+                    {isOpen ? (
+                      <Minus className="h-4 w-4" />
+                    ) : (
+                      <Plus className="h-4 w-4" />
+                    )}
+                  </div>
                 </button>
 
-                {/* Resposta */}
                 <div
-                  id={`faq-content-${item.id}`}
-                  className={`grid transition-all duration-300 ease-in-out ${
+                  id={`faq-content-${index}`}
+                  className={`grid overflow-hidden transition-all duration-300 ease-in-out ${
                     isOpen
-                      ? "grid-rows-[1fr] border-t border-[#2C4233]/5 bg-[#F5F0E6]/10"
-                      : "grid-rows-[0fr]"
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="p-5 text-sm leading-relaxed text-[#2C4233]/80 sm:p-6 sm:text-base">
+                    <p className="border-t border-[#110B24]/60 px-6 pb-6 pt-4 text-sm leading-relaxed text-[#A39CB5] sm:text-base">
                       {item.answer}
                     </p>
                   </div>
                 </div>
-              </article>
+              </div>
             );
           })}
         </div>

@@ -1,62 +1,128 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
+import { motion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[85vh] min-h-125 flex items-center overflow-hidden">
+    <section className="relative w-full overflow-hidden bg-[#07040E] pb-20 pt-28 md:pb-28 md:pt-36">
       
-      {/* 1. IMAGEM DE FUNDO (OTIMIZADA PELO NEXT.JS) */}
-      <Image
-        src="/pizzahero.jpg" // Substitua por uma foto da pizza em alta resolução
-        alt="Fundo da pizzaria com forno a lenha ou ingredientes"
-        fill
-        priority
-        quality={85}
-        sizes="100vw"
-        className="object-cover object-center"
+      {/* Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#110B24_1px,transparent_1px),linear-gradient(to_bottom,#110B24_1px,transparent_1px)] bg-size-[4rem_4rem] opacity-40 mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+
+      {/* Glow Roxo Animado */}
+      <motion.div
+        animate={{
+          scale: [1, 1.08, 1],
+          opacity: [0.08, 0.12, 0.08],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="pointer-events-none absolute left-1/2 top-0 h-100 w-150 -translate-x-1/2 rounded-full bg-[#6b03f6]/10 blur-[130px]"
       />
 
-      {/* 2. OVERLAY ESCURO (Garante o contraste do texto com o Verde Oliva) */}
-      <div className="absolute inset-0 bg-linear-to-r from-[#2C4233]/90 via-[#2C4233]/70 to-transparent" />
-
-      {/* 3. CONTEÚDO POR CIMA DO FUNDO */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-12">
-        <div className="flex flex-col items-center text-center md:max-w-xl md:items-start md:text-left">
-          
-          {/* Tag de destaque */}
-          <span className="mb-4 rounded-full bg-[#F5F0E6]/20 border border-[#F5F0E6]/30 px-4 py-1.5 text-xs font-bold tracking-wider text-[#F5F0E6] uppercase backdrop-blur-sm">
-            🍕 Fermentação Natural de 48h
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.15,
+            },
+          },
+        }}
+        className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 text-center"
+      >
+        {/* Heading */}
+        <motion.h1
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 20,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+            },
+          }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight text-[#F8F7FA] sm:text-6xl md:text-7xl"
+        >
+          Transformamos visitas em conexões no{" "}
+          <span className="text-[#36f631] drop-shadow-[0_0_20px_rgba(54,246,49,0.15)]">
+            WhatsApp.
           </span>
-          
-          {/* O texto agora muda para Farina (#F5F0E6) para contrastar com o fundo escuro */}
-          <h1 className="text-4xl font-extrabold tracking-tight text-[#F5F0E6] sm:text-5xl lg:text-6xl lg:leading-tight">
-            A verdadeira pizza <br />
-            <span className="text-[#DFB15B]">artesanal moderna.</span>
-          </h1>
-          
-          <p className="mt-6 text-base leading-relaxed text-[#F5F0E6]/80 md:text-lg">
-            Massa leve, bordas aeradas e ingredientes rigorosamente selecionados. Descubra o sabor da tradição italiana com um toque contemporâneo.
-          </p>
-          
-          {/* Botões de Ação */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-            <Link 
-              href="#cardapio" 
-              className="w-full sm:w-auto rounded-full bg-[#D64527] px-8 py-4 text-center font-bold text-white shadow-lg transition-all duration-300 hover:bg-[#b8351a] hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
-            >
-              Ver Cardápio
-            </Link>
-            
-            <Link 
-              href="#sobre" 
-              className="w-full sm:w-auto rounded-full border-2 border-[#F5F0E6] px-8 py-3.5 text-center font-bold text-[#F5F0E6] transition-all hover:-translate-y-0.5 active:translate-y-0 duration-300 hover:bg-[#F5F0E6] hover:text-[#2C4233] active:scale-95"
-            >
-              Nossa História
-            </Link>
-          </div>
+        </motion.h1>
 
-        </div>
-      </div>
+        {/* Subtitle */}
+        <motion.p
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 20,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+            },
+          }}
+          transition={{ duration: 0.6 }}
+          className="mt-6 max-w-2xl text-base leading-relaxed text-[#A39CB5] sm:text-lg"
+        >
+          Desenvolvemos experiências digitais de alta performance para negócios
+          locais. Design cirúrgico, carregamento instantâneo e foco absoluto em
+          vendas.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 20,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+            },
+          }}
+          transition={{ duration: 0.6 }}
+          className="mt-10 flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row"
+        >
+          <a
+            href="https://wa.me/5511923736213"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#36f631] px-7 py-3.5 text-sm font-bold text-[#07040E] shadow-[0_0_30px_rgba(54,246,49,0.25)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(54,246,49,0.4)] sm:w-auto"
+          >
+            Começar meu projeto
+            <ArrowUpRight className="h-4 w-4 text-[#07040E] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+
+          <Link
+            href="#portfolio"
+            className="flex w-full items-center justify-center rounded-lg border border-[#6b03f6]/20 bg-[#110B24]/40 px-7 py-3.5 text-sm font-medium text-[#F8F7FA] transition-all duration-300 hover:border-[#6b03f6]/40 hover:bg-[#6b03f6]/20 sm:w-auto"
+          >
+            Explorar portfólio
+          </Link>
+        </motion.div>
+
+        {/* Divider */}
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0.7 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{
+            delay: 0.5,
+            duration: 0.8,
+          }}
+          className="mt-20 w-full max-w-3xl border-t border-[#110B24]"
+        />
+      </motion.div>
     </section>
   );
 }

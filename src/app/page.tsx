@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Hero from "./sections/Hero";
-import Menu from "./sections/Menu";
+import Gallery from "./sections/Gallery";
 import About from "./sections/About";
 import CTA from "./sections/CTA";
 import FAQ from "./sections/FAQ"
@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <Header />
       <Hero />
-      <Menu />
+      <Gallery />
       <About />
       <CTA/>
       <FAQ/>

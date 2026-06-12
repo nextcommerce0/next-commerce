@@ -1,76 +1,121 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image"
-import Location from "../sections/Location";
+import Image from "next/image";
+import { MessageSquare, Mail } from "lucide-react";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
-  return (
-    <footer className="w-full bg-[#2C4233] pt-16 pb-8 text-[#F5F0E6]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+  const currentYear = new Date().getFullYear();
 
-        {/* Localização */}
-        <div className="mb-16 overflow-hidden rounded-3xl bg-white text-slate-900">
-          <Location />
+  return (
+    <footer className="w-full border-t border-[#6b03f6]/10 bg-[#07040E] text-[#A39CB5]">
+      <div className="mx-auto max-w-7xl px-6 py-12">
+        
+        {/* GRID */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+          
+          {/* SOBRE */}
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="flex shrink-0 items-center">
+              <Image
+                src="/logo.png"
+                alt="Next Commerce Logo"
+                width={150}
+                height={150}
+                priority
+                className="h-14 w-auto object-contain md:h-16"
+              />
+            </Link>
+
+            <p className="max-w-xs text-sm leading-relaxed text-[#A39CB5]">
+              Criamos vitrines digitais rápidas, modernas e feitas
+              para transformar visitas em conversas no WhatsApp.
+            </p>
+
+            {/* Social */}
+            <div className="mt-2 flex items-center gap-4">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="transition-all duration-300 hover:scale-110 hover:text-[#6b03f6]"
+              >
+                <FaInstagram className="h-5 w-5" />
+              </a>
+
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="transition-all duration-300 hover:scale-110 hover:text-[#6b03f6]"
+              >
+                <FaLinkedin className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* NAVEGAÇÃO */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#F8F7FA]">
+              Navegação
+            </h3>
+
+            <Link
+              href="#solucoes"
+              className="text-sm transition-colors duration-300 hover:text-[#6b03f6]"
+            >
+              Soluções
+            </Link>
+
+            <Link
+              href="#portfolio"
+              className="text-sm transition-colors duration-300 hover:text-[#6b03f6]"
+            >
+              Portfólio
+            </Link>
+
+            <Link
+              href="#faq"
+              className="text-sm transition-colors duration-300 hover:text-[#6b03f6]"
+            >
+              Dúvidas frequentes
+            </Link>
+          </div>
+
+          {/* CONTATO */}
+          <div className="flex flex-col gap-3">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#F8F7FA]">
+              Contato direto
+            </h3>
+
+            <a
+              href="https://wa.me/5511923736213"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm font-medium text-[#36f631] transition-opacity hover:opacity-80"
+            >
+              <MessageSquare className="h-4 w-4" />
+              (11) 92373-6213
+            </a>
+
+            <a
+              href="mailto:nextcommerce0@gmail.com"
+              className="flex items-center gap-2 text-sm transition-colors duration-300 hover:text-[#6b03f6]"
+            >
+              <Mail className="h-4 w-4" />
+              nextcommerce0@gmail.com
+            </a>
+          </div>
         </div>
 
-        {/* Footer Bottom */}
-        <div className="flex flex-col items-center justify-between gap-6 border-t border-[#F5F0E6]/10 pt-8 md:flex-row">
-          
-          {/* Branding */}
-          <div className="text-center md:text-left">
-            <Link href="/" className="flex items-center">
-            <Image
-              src="/logo.svg"
-              alt="Logo da pizzaria"
-              width={280}
-              height={120}
-              priority
-              className="h-14 w-auto object-contain md:h-16"
-            />
-          </Link>
-
-            <p className="mt-1 text-xs text-[#F5F0E6]/50">
-              © {new Date().getFullYear()} Todos os direitos reservados.
-            </p>
-          </div>
-
-          {/* Navegação */}
-          <nav className="flex flex-wrap justify-center gap-6 text-sm text-[#F5F0EE]/70">
-            <Link
-              href="#cardapio"
-              className="transition-colors hover:text-[#DFB15B]"
-            >
-              Cardápio
-            </Link>
-
-            <Link
-              href="#sobre"
-              className="transition-colors hover:text-[#DFB15B]"
-            >
-              Sobre Nós
-            </Link>
-
-            <Link
-              href="https://google.com"
-              target="_blank"
-              className="transition-colors hover:text-[#DFB15B]"
-            >
-              Avaliar no Google
-            </Link>
-          </nav>
-
-          {/* Crédito */}
-          <div className="text-center md:text-right">
-            <p className="text-[11px] tracking-wider text-[#F5F0E6]/40">
-              Desenvolvido por{" "}
-              <Link
-                href="https://google.com"
-                target="_blank"
-                className="transition-colors hover:text-[#DFB15B]"
-              >
-                Next Commerce
-              </Link>
-            </p>
-          </div>
+        {/* Bottom */}
+        <div className="mt-12 border-t border-[#110B24] pt-6 text-center text-xs text-[#6D6780]">
+          <p>
+            © {currentYear} Next Commerce. Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>

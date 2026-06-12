@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "brasa - A verdadeira pizza artesanal moderna",
+  title: "Next Commerce",
   description:
-    "Descubra o sabor da tradição italiana com um toque contemporâneo. Massa leve, bordas aeradas e ingredientes rigorosamente selecionados.",
+    "Vitrines digitais de alta conversão para transformar visitas em clientes no seu WhatsApp. Design moderno, ultra-rápido e focado em resultados.",
 };
 
 export default function RootLayout({

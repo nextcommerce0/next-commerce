@@ -1,80 +1,129 @@
-import Gallery from "./Gallery"; // Certifique-se de ajustar o caminho da importação de acordo com sua pasta
+"use client";
 
-interface TopicItem {
-  id: number;
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-}
+import { motion } from "motion/react";
+import { Eye, Smartphone, Zap } from "lucide-react";
 
 export default function About() {
-  const topics: TopicItem[] = [
+  const pilares = [
     {
-      id: 1,
-      title: "Feita com Amor",
-      description: "Cada disco de massa é aberto à mão com carinho, mantendo a tradição viva e garantindo um formato artesanal único.",
-      icon: (
-        <svg className="h-6 w-6 text-[#D64527]" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-        </svg>
-      ),
+      icon: <Eye className="h-5 w-5 text-[#6b03f6]" />,
+      title: "Design que prende atenção",
+      description:
+        "Vitrines com visual premium para gerar confiança e capturar o interesse do cliente nos primeiros segundos.",
     },
     {
-      id: 2,
-      title: "Processo Lento e Natural",
-      description: "Nossa massa descansa por até 48 horas. O resultado é uma digestão incrivelmente leve, com bordas aeradas e crocantes.",
-      icon: (
-        <svg className="h-6 w-6 text-[#D64527]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
+      icon: <Zap className="h-5 w-5 text-[#36f631]" />,
+      title: "Carregamento rápido",
+      description:
+        "Sites leves e otimizados para abrir rapidamente no celular, reduzindo abandono e aumentando contatos.",
+    },
+    {
+      icon: <Smartphone className="h-5 w-5 text-[#6b03f6]" />,
+      title: "WhatsApp sem fricção",
+      description:
+        "A navegação é desenhada para levar o cliente ao WhatsApp no momento certo, sem etapas desnecessárias.",
     },
   ];
 
+  const fadeUp = {
+    hidden: {
+      opacity: 0,
+      y: 24,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   return (
-    <section id="sobre" className="w-full bg-[#F5F0E6] py-16 md:py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-center">
-          
-          {/* IMPORTAÇÃO DO COMPONENTE FILHO DA GALERIA */}
-          <Gallery />
+    <section
+      id="solucoes"
+      className="w-full overflow-hidden border-t border-[#110B24] bg-[#07040E] py-24"
+    >
+      <div className="mx-auto max-w-6xl px-6">
+        {/* Header */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeUp}
+          transition={{ duration: 0.7 }}
+          className="max-w-2xl"
+        >
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#6b03f6]">
+            Metodologia Next
+          </span>
 
-          {/* CONTEÚDO INSTITUCIONAL */}
-          <div className="w-full lg:w-1/2">
-            <span className="text-sm font-bold tracking-wider text-[#D64527] uppercase">
-              Nossa Cozinha & Espaço
+          <h2 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-[#F8F7FA] sm:text-4xl md:text-5xl">
+            Não criamos apenas sites.
+            <br />
+            Criamos experiências com{" "}
+            <span className="text-[#36f631] drop-shadow-[0_0_15px_rgba(54,246,49,0.15)]">
+              foco em conversão
             </span>
-            
-            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-[#2C4233] sm:text-4xl">
-              Conheça a nossa <br />
-              <span className="text-[#2C4233]/70 font-medium">casa e nossa paixão.</span>
-            </h2>
-            
-            <p className="mt-4 text-base leading-relaxed text-[#2C4233]/80">
-              Acreditamos que comer pizza é uma experiência visual e afetiva. Navegue pela nossa galeria ao lado para conhecer nosso forno, o cuidado no preparo e o ambiente acolhedor que preparamos para receber você e sua família.
-            </p>
+            .
+          </h2>
 
-            {/* LISTA DE TÓPICOS */}
-            <div className="mt-8 flex flex-col gap-4">
-              {topics.map((topic) => (
-                <div key={topic.id} className="flex gap-4 items-start rounded-2xl bg-white/40 p-4 backdrop-blur-sm border border-[#2C4233]/5 transition-all duration-300 hover:bg-white/80 hover:shadow-sm">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#D64527]/10">
-                    {topic.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#2C4233] text-sm">
-                      {topic.title}
-                    </h3>
-                    <p className="mt-0.5 text-xs leading-relaxed text-[#2C4233]/70">
-                      {topic.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <p className="mt-4 text-base leading-relaxed text-[#A39CB5] sm:text-lg">
+            Muitos negócios locais perdem clientes porque suas páginas
+            são lentas, confusas ou difíceis de usar no celular.
+            Criamos experiências rápidas, claras e feitas para gerar
+            mais contatos no WhatsApp.
+          </p>
+        </motion.div>
 
-        </div>
+        {/* Cards */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.12,
+              },
+            },
+          }}
+          className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3"
+        >
+          {pilares.map((pilar) => (
+            <motion.div
+              key={pilar.title}
+              variants={fadeUp}
+              transition={{
+                duration: 0.55,
+                ease: "easeOut",
+              }}
+              whileHover={{
+                y: -4,
+                scale: 1.015,
+              }}
+              className="group relative rounded-2xl border border-[#110B24] bg-[#110B24]/20 p-6 transition-colors duration-300 hover:border-[#6b03f6]/40 hover:bg-[#110B24]/40"
+            >
+              {/* Icon */}
+              <motion.div
+                whileHover={{
+                  rotate: 2,
+                }}
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#110B24] bg-[#07040E] transition-colors duration-300 group-hover:border-[#6b03f6]/30"
+              >
+                {pilar.icon}
+              </motion.div>
+
+              {/* Title */}
+              <h3 className="mt-4 text-lg font-bold tracking-tight text-[#F8F7FA]">
+                {pilar.title}
+              </h3>
+
+              {/* Description */}
+              <p className="mt-2 text-sm leading-relaxed text-[#A39CB5]">
+                {pilar.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

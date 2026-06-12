@@ -1,101 +1,116 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-
-interface ImageItem {
-  src: string;
-  alt: string;
-}
+import { ArrowUpRight } from "lucide-react";
 
 export default function Gallery() {
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-
-  // Array preparado para as suas 4 fotos da galeria
-  const galleryImages: ImageItem[] = [
-    { src: "/forno.jpg", alt: "Nosso forno a lenha artesanal" },
-    { src: "/massa.jpg", alt: "Mãos do chef abrindo a massa com amor" },
-    { src: "/local.jpg", alt: "Ambiente interno aconchegante da pizzaria" },
-    { src: "/horta.jpg", alt: "Ingredientes frescos selecionados da horta" },
+  const projetos = [
+    {
+      title: "Burger & Co. Craft",
+      category: "Gastronomia",
+      image:
+        "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200&auto=format&fit=crop",
+      link: "https://exemplo1.com.br",
+    },
+    {
+      title: "Studio Donna | Beauty",
+      category: "Estética & Beleza",
+      image:
+        "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop",
+      link: "https://exemplo2.com.br",
+    },
+    {
+      title: "EletroVolt Materiais",
+      category: "Serviços Locais",
+      image:
+        "https://images.unsplash.com/photo-1504307651254-35680f356df?q=80&w=1200&auto=format&fit=crop",
+      link: "https://exemplo3.com.br",
+    },
+    {
+      title: "Aura Concept Store",
+      category: "Moda & Vestuário",
+      image:
+        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
+      link: "https://exemplo4.com.br",
+    },
   ];
 
-  const prevSlide = (): void => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? galleryImages.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const nextSlide = (): void => {
-    const isLastSlide = currentIndex === galleryImages.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
+  const projetosDuplicados = [
+    ...projetos.map((p) => ({ ...p, id: `orig-${p.title}` })),
+    ...projetos.map((p) => ({ ...p, id: `dup-${p.title}` })),
+  ];
 
   return (
-    <div className="relative w-full lg:w-1/2 group">
-      {/* Detalhe estético de moldura traseira */}
-      <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-3xl border-2 border-[#2C4233]/20" />
-      
-      {/* Container de exibição das imagens */}
-      <div className="relative h-87.5 w-full overflow-hidden rounded-3xl sm:h-112.5 shadow-lg bg-[#2C4233]/5">
-        {galleryImages.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 h-full w-full transition-opacity duration-700 ease-in-out ${
-              index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-              priority={index === 0}
-            />
-            {/* Legenda da foto atual */}
-            <div className="absolute bottom-0 inset-x-0 bg-linear-to-t from-black/60 to-transparent p-6 pt-12 text-white text-sm font-medium">
-              {image.alt}
-            </div>
-          </div>
-        ))}
+    <section
+      id="portfolio"
+      className="w-full overflow-hidden border-t border-[#110B24] bg-[#07040E] py-24"
+    >
+      {/* Header */}
+      <div className="mx-auto mb-16 max-w-5xl px-6">
+        <span className="text-xs font-bold uppercase tracking-widest text-[#6b03f6]">
+          Casos de Sucesso
+        </span>
 
-        {/* Seta Esquerda */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/80 p-2.5 text-[#2C4233] shadow-md backdrop-blur-sm transition-all hover:bg-white md:opacity-0 md:group-hover:opacity-100 cursor-pointer"
-          aria-label="Foto anterior"
-        >
-          <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
+        <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[#F8F7FA] sm:text-4xl">
+          Vitrines que já estão{" "}
+          <span className="text-[#36f631]">faturando</span>.
+        </h2>
 
-        {/* Seta Direita */}
-        <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/80 p-2.5 text-[#2C4233] shadow-md backdrop-blur-sm transition-all hover:bg-white md:opacity-0 md:group-hover:opacity-100 cursor-pointer"
-          aria-label="Próxima foto"
-        >
-          <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+        <p className="mt-4 max-w-2xl text-base text-[#A39CB5]">
+          Clique em qualquer um dos projetos abaixo para abrir e testar a
+          experiência de navegação e conversão em tempo real.
+        </p>
+      </div>
 
-        {/* Indicadores de bolinha (Dots) */}
-        <div className="absolute bottom-6 right-6 z-20 flex gap-1.5">
-          {galleryImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "w-6 bg-[#D64527]" : "w-2 bg-white/50"
-              }`}
-              aria-label={`Ir para foto ${index + 1}`}
-            />
+      {/* Carousel */}
+      <div className="relative overflow-hidden py-4">
+        {/* Fade lateral */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-linear-to-r from-[#07040E] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-linear-to-l from-[#07040E] to-transparent" />
+
+        {/* Track */}
+        <div className="flex w-max gap-6 animate-[marquee_35s_linear_infinite] hover:[animation-play-state:paused]">
+          {projetosDuplicados.map((projeto) => (
+            <a
+              key={projeto.id}
+              href={projeto.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block w-70 shrink-0 overflow-hidden rounded-2xl border border-[#110B24] bg-[#110B24]/20 transition-all duration-300 hover:border-[#6b03f6]/40 hover:bg-[#110B24]/50 sm:w-85"
+            >
+              {/* Image */}
+              <div className="relative h-44 w-full overflow-hidden bg-[#110B24]">
+                <Image
+                  src={projeto.image}
+                  alt={projeto.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 280px, 340px"
+                />
+
+                <div className="absolute inset-0 bg-[#07040E]/20 transition-colors duration-300 group-hover:bg-[#07040E]/40" />
+              </div>
+
+              {/* Content */}
+              <div className="flex items-center justify-between p-5">
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#6b03f6]">
+                    {projeto.category}
+                  </span>
+
+                  <h3 className="mt-1 text-base font-bold tracking-tight text-[#F8F7FA]">
+                    {projeto.title}
+                  </h3>
+                </div>
+
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#110B24] bg-[#07040E] text-[#A39CB5] transition-all duration-300 group-hover:border-[#36f631]/30 group-hover:text-[#36f631]">
+                  <ArrowUpRight className="h-4 w-4" />
+                </div>
+              </div>
+            </a>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
