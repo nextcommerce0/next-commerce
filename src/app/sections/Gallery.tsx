@@ -6,32 +6,28 @@ import { ArrowUpRight } from "lucide-react";
 export default function Gallery() {
   const projetos = [
     {
-      title: "Burger & Co. Craft",
+      title: "Brasa",
       category: "Gastronomia",
-      image:
-        "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200&auto=format&fit=crop",
-      link: "https://exemplo1.com.br",
+      image: "/restaurant.png",
+      link: "https://template-restaurant-eight.vercel.app/",
     },
     {
-      title: "Studio Donna | Beauty",
+      title: "Clínica Estética",
       category: "Estética & Beleza",
-      image:
-        "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop",
-      link: "https://exemplo2.com.br",
+      image: "/beauty.png",
+      link: "https://template-beauty.vercel.app/",
     },
     {
-      title: "EletroVolt Materiais",
-      category: "Serviços Locais",
-      image:
-        "https://images.unsplash.com/photo-1504307651254-35680f356df?q=80&w=1200&auto=format&fit=crop",
-      link: "https://exemplo3.com.br",
+      title: "Advogados Associados",
+      category: "Advocacia",
+      image: "/advogados.png",
+      link: "https://template-lawyer-psi.vercel.app/",
     },
     {
-      title: "Aura Concept Store",
-      category: "Moda & Vestuário",
-      image:
-        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
-      link: "https://exemplo4.com.br",
+      title: "Barbearia Imprevisto",
+      category: "Barbearia",
+      image: "/barbershop.png",
+      link: "https://template-barbershop-rust.vercel.app/",
     },
   ];
 
