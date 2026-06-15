@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
+
 
 export default function Hero() {
   return (
@@ -53,10 +53,10 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight text-[#F8F7FA] sm:text-6xl md:text-7xl"
         >
-          Transformamos visitas em conexões no{" "}
+          Seu negócio merece um site tão profissional quanto o que você{" "}
           <span className="text-[#36f631] drop-shadow-[0_0_20px_rgba(54,246,49,0.15)]">
-            WhatsApp.
-          </span>
+            oferece
+          </span>.
         </motion.h1>
 
         {/* Subtitle */}
@@ -74,9 +74,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="mt-6 max-w-2xl text-base leading-relaxed text-[#A39CB5] sm:text-lg"
         >
-          Desenvolvemos experiências digitais de alta performance para negócios
-          locais. Design cirúrgico, carregamento instantâneo e foco absoluto em
-          vendas.
+          Na Next, desenvolvemos sites personalizados para empresas e profissionais que querem se apresentar com credibilidade, design consistente e uma estrutura que funciona de verdade.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -101,7 +99,7 @@ export default function Hero() {
             className="group flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#36f631] px-7 py-3.5 text-sm font-bold text-[#07040E] shadow-[0_0_30px_rgba(54,246,49,0.25)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(54,246,49,0.4)] sm:w-auto"
           >
             Começar meu projeto
-            <ArrowUpRight className="h-4 w-4 text-[#07040E] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          
           </a>
 
           <Link

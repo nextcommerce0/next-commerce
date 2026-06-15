@@ -1,7 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import { motion } from "motion/react";
-import { MessageSquare, ArrowRight } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 
 export default function CTA() {
   return (
@@ -73,9 +74,9 @@ export default function CTA() {
           }}
           className="max-w-2xl text-3xl font-extrabold leading-tight tracking-tight text-[#F8F7FA] sm:text-5xl"
         >
-          Pronto para transformar visitas em{" "}
+          Quando alguém te pesquisa no Google,{" "}
           <span className="text-[#36f631] drop-shadow-[0_0_20px_rgba(54,246,49,0.15)]">
-            conversas no WhatsApp
+            o que aparece
           </span>
           ?
         </motion.h2>
@@ -97,9 +98,7 @@ export default function CTA() {
           }}
           className="mt-4 max-w-xl text-base leading-relaxed text-[#A39CB5] sm:text-lg"
         >
-          Seu cliente já está procurando você. Criamos experiências
-          rápidas, profissionais e pensadas para gerar mais mensagens
-          e oportunidades de venda.
+          Se a resposta for "nada" ou pior, o perfil de um concorrente você provavelmente está perdendo contatos todos os dias sem nem saber.
         </motion.p>
 
         {/* CTA */}
@@ -145,7 +144,7 @@ export default function CTA() {
             }}
             className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#36f631] px-8 py-4 text-base font-bold text-[#07040E] sm:w-auto"
           >
-            Falar no WhatsApp
+            Bora mudar isso
 
             <motion.div
               animate={{
@@ -156,7 +155,7 @@ export default function CTA() {
                 repeat: Infinity,
               }}
             >
-              <ArrowRight className="h-5 w-5 text-[#07040E]" />
+              
             </motion.div>
           </motion.a>
         </motion.div>

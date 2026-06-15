@@ -13,29 +13,29 @@ export default function FAQ() {
 
   const faqData: FAQItem[] = [
     {
-      question: "O que é uma vitrine digital da Next Commerce?",
+      question: "Preciso entender de tecnologia para ter um site?",
       answer:
-        "É uma página profissional feita para apresentar seu negócio de forma moderna e levar clientes direto para o WhatsApp. Ela é rápida, funciona muito bem no celular e é pensada para aumentar contatos e pedidos.",
+        "Não. Nossa função é justamente cuidar de tudo isso por você. Você nos conta sobre o seu negócio, o que faz, para quem, como quer se apresentar  e a gente transforma isso em um site. Nenhum conhecimento técnico é necessário da sua parte.",
     },
     {
-      question: "Preciso pagar mensalidade?",
+      question: "O que está incluído no desenvolvimento do site?",
       answer:
-        "Temos opções sem mensalidade, onde você paga apenas pelo desenvolvimento da vitrine. Também oferecemos manutenção opcional para quem quiser suporte, atualizações e melhorias contínuas.",
+        "Cada projeto inclui criação do design, desenvolvimento das páginas, adaptação para celular e tablet, configuração básica de SEO e entrega pronta para publicar. Os detalhes variam conforme a necessidade de cada cliente, por isso começamos sempre com uma conversa.",
     },
     {
-      question: "Em quanto tempo meu projeto fica pronto?",
+      question: "Meu site vai aparecer no Google?",
       answer:
-        "O prazo médio é de 5 a 7 dias úteis após recebermos as informações do seu negócio, como fotos, textos e referências.",
+        "Todo site que desenvolvemos já sai com uma estrutura otimizada para mecanismos de busca  títulos, descrições, velocidade de carregamento e organização de conteúdo (como SEO). Isso aumenta as chances de aparecer nas buscas.",
     },
     {
-      question: "Serve para qualquer tipo de negócio?",
+      question: "O que é SEO e por que isso importa?",
       answer:
-        "Sim. Funciona muito bem para restaurantes, salões, clínicas, lojas, prestadores de serviço e qualquer empresa que use o WhatsApp como principal canal de atendimento.",
+        "SEO é o conjunto de configurações que ajuda o Google a entender do que se trata o seu site e a mostrá-lo para as pessoas certas na hora certa. Pense como uma vitrine: de nada adianta ter um espaço bem organizado se ele estiver escondido numa rua que ninguém passa. O SEO é o que coloca seu site numa rua movimentada.",
     },
     {
-      question: "Vou conseguir editar depois?",
+      question: "Preciso ter textos e fotos prontos para começar?",
       answer:
-        "Depende do plano escolhido. Podemos entregar uma estrutura simples para ajustes básicos ou cuidar das alterações para você.",
+        "Não necessariamente. Se você já tiver um material pronto, ótimo, mas se não tiver, podemos ajudar a organizar as informações e sugerir imagens que se encaixem no seu negócio. O importante é que a gente tenha uma boa conversa para entender o que você faz e como quer se apresentar.",
     },
   ];
 

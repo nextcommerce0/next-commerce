@@ -11,10 +11,8 @@ export default function Footer() {
   return (
     <footer className="w-full border-t border-[#6b03f6]/10 bg-[#07040E] text-[#A39CB5]">
       <div className="mx-auto max-w-7xl px-6 py-12">
-        
         {/* GRID */}
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-          
           {/* SOBRE */}
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex shrink-0 items-center">
@@ -29,14 +27,14 @@ export default function Footer() {
             </Link>
 
             <p className="max-w-xs text-sm leading-relaxed text-[#A39CB5]">
-              Criamos vitrines digitais rápidas, modernas e feitas
-              para transformar visitas em conversas no WhatsApp.
+              Sites profissionais para negócios que levam a sério a própria
+              imagem.
             </p>
 
             {/* Social */}
             <div className="mt-2 flex items-center gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/nextcommerc0?igsh=eWZyMzZweTBmZ3V6&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -113,9 +111,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-12 border-t border-[#110B24] pt-6 text-center text-xs text-[#6D6780]">
-          <p>
-            © {currentYear} Next Commerce. Todos os direitos reservados.
-          </p>
+          <p>© {currentYear} Next Commerce. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

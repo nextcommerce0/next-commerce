@@ -47,18 +47,15 @@ export default function Gallery() {
     >
       {/* Header */}
       <div className="mx-auto mb-16 max-w-5xl px-6">
-        <span className="text-xs font-bold uppercase tracking-widest text-[#6b03f6]">
-          Casos de Sucesso
-        </span>
-
         <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[#F8F7FA] sm:text-4xl">
-          Vitrines que já estão{" "}
-          <span className="text-[#36f631]">faturando</span>.
+          Alguns projetos que saíram do{" "}
+          <span className="text-[#36f631]">papel</span>.
         </h2>
 
         <p className="mt-4 max-w-2xl text-base text-[#A39CB5]">
-          Clique em qualquer um dos projetos abaixo para abrir e testar a
-          experiência de navegação e conversão em tempo real.
+          Cada projeto foi pensado para oferecer uma experiência de navegação
+          clara, moderna e bem estruturada. Explore os projetos e veja como cada
+          solução foi construída na prática.
         </p>
       </div>
 

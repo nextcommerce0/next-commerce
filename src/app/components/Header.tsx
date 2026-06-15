@@ -33,7 +33,7 @@ export default function Header() {
             href="#portfolio"
             className="text-sm font-medium text-[#A39CB5] transition-colors duration-300 hover:text-[#6b03f6]"
           >
-            Vitrines
+            Projetos
           </Link>
 
           <Link
@@ -52,7 +52,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="group flex items-center gap-2 rounded-full bg-[#36f631] px-6 py-3 text-sm font-bold text-[#07040E] shadow-[0_0_25px_rgba(54,246,49,0.25)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(54,246,49,0.4)]"
           >
-            Criar minha vitrine
+            Falar com a Next
             <ArrowUpRight className="h-4 w-4 text-[#07040E] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </div>
