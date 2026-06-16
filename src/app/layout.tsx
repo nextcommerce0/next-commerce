@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Next Commerce",
   },
   verification: {
-    google: "GatA2S_BTmD-viWfkzUblPbkIgjeR6NlP4iX1mX46S8",
+    google: "vsEkDev4yezz7ZZPUzJzpf-Qkcf-ppGEbKjVpBR9C7U",
   },
 
   description:
