@@ -1,26 +1,28 @@
-/* eslint-disable react/no-unescaped-entities */
+
 "use client";
 
 import { motion } from "motion/react";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, ArrowUpRight } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section className="relative overflow-hidden bg-[#07040E] px-6 py-20">
-      
-      {/* Glow Roxo Respirando */}
+    <section className="relative overflow-hidden bg-[#F0FFFE] px-6 py-24">
+      {/* Glow energético */}
       <motion.div
         animate={{
           scale: [1, 1.08, 1],
-          opacity: [0.05, 0.08, 0.05],
+          opacity: [0.08, 0.14, 0.08],
         }}
         transition={{
           duration: 8,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="pointer-events-none absolute left-1/2 top-1/2 h-87.5 w-150 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#6b03f6]/5 blur-[120px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-95 w-150 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00C9B8]/10 blur-[130px]"
       />
+
+      {/* Grid sutil */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,14,26,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,14,26,0.04)_1px,transparent_1px)] bg-size-[4rem_4rem]" />
 
       {/* Card CTA */}
       <motion.div
@@ -40,8 +42,11 @@ export default function CTA() {
           duration: 0.7,
           ease: "easeOut",
         }}
-        className="relative z-10 mx-auto flex max-w-5xl flex-col items-center rounded-[28px] border border-[#110B24] bg-linear-to-b from-[#110B24]/60 to-[#07040E] p-8 text-center md:p-16"
+        className="relative z-10 mx-auto flex max-w-5xl flex-col items-center overflow-hidden rounded-[36px] border border-white/10 bg-[#0A0E1A] p-8 text-center shadow-[0_25px_80px_rgba(10,14,26,0.12)] md:p-16"
       >
+        {/* Glow interno */}
+        <div className="pointer-events-none absolute left-1/2 top-0 h-70 w-100 -translate-x-1/2 rounded-full bg-[#00C9B8]/10 blur-[100px]" />
+
         {/* Ícone */}
         <motion.div
           animate={{
@@ -52,9 +57,9 @@ export default function CTA() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-[#6b03f6]/20 bg-[#6b03f6]/10 text-[#6b03f6]"
+          className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-3xl border border-[#00C9B8]/20 bg-[#00C9B8]/10 text-[#00C9B8]"
         >
-          <MessageSquare className="h-5 w-5" />
+          <MessageSquare className="h-6 w-6" />
         </motion.div>
 
         {/* Heading */}
@@ -72,10 +77,10 @@ export default function CTA() {
             delay: 0.1,
             duration: 0.6,
           }}
-          className="max-w-2xl text-3xl font-extrabold leading-tight tracking-tight text-[#F8F7FA] sm:text-5xl"
+          className="relative z-10 max-w-3xl text-3xl font-extrabold leading-tight tracking-tight text-[#F0FFFE] sm:text-5xl"
         >
           Quando alguém te pesquisa no Google,{" "}
-          <span className="text-[#36f631] drop-shadow-[0_0_20px_rgba(54,246,49,0.15)]">
+          <span className="text-[#00C9B8] drop-shadow-[0_0_20px_rgba(0,201,184,0.20)]">
             o que aparece
           </span>
           ?
@@ -96,9 +101,10 @@ export default function CTA() {
             delay: 0.2,
             duration: 0.6,
           }}
-          className="mt-4 max-w-xl text-base leading-relaxed text-[#A39CB5] sm:text-lg"
+          className="relative z-10 mt-5 max-w-2xl text-base leading-relaxed text-[#F0FFFE]/70 sm:text-lg"
         >
-          Se a resposta for "nada" ou pior, o perfil de um concorrente você provavelmente está perdendo contatos todos os dias sem nem saber.
+          Se a resposta for “nada” ou, pior, o perfil de um concorrente,
+          você provavelmente está perdendo contatos todos os dias sem nem saber.
         </motion.p>
 
         {/* CTA */}
@@ -116,7 +122,7 @@ export default function CTA() {
             delay: 0.3,
             duration: 0.6,
           }}
-          className="mt-10 w-full sm:w-auto"
+          className="relative z-10 mt-10 w-full sm:w-auto"
         >
           <motion.a
             href="https://wa.me/5511923736213"
@@ -130,9 +136,9 @@ export default function CTA() {
             }}
             animate={{
               boxShadow: [
-                "0 0 30px rgba(54,246,49,0.22)",
-                "0 0 38px rgba(54,246,49,0.32)",
-                "0 0 30px rgba(54,246,49,0.22)",
+                "0 0 30px rgba(0,201,184,0.20)",
+                "0 0 40px rgba(0,201,184,0.30)",
+                "0 0 30px rgba(0,201,184,0.20)",
               ],
             }}
             transition={{
@@ -142,20 +148,20 @@ export default function CTA() {
                 ease: "easeInOut",
               },
             }}
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#36f631] px-8 py-4 text-base font-bold text-[#07040E] sm:w-auto"
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#00C9B8] px-8 py-4 text-base font-bold text-[#0A0E1A] transition-all duration-300 sm:w-auto"
           >
             Bora mudar isso
 
             <motion.div
               animate={{
-                x: [0, 3, 0],
+                x: [0, 4, 0],
               }}
               transition={{
                 duration: 1.8,
                 repeat: Infinity,
               }}
             >
-              
+              <ArrowUpRight className="h-5 w-5" />
             </motion.div>
           </motion.a>
         </motion.div>
@@ -173,7 +179,7 @@ export default function CTA() {
             delay: 0.45,
             duration: 0.6,
           }}
-          className="mt-5 text-center text-xs font-medium tracking-wide text-[#6D6780]"
+          className="relative z-10 mt-6 text-center text-xs font-medium tracking-wide text-[#F0FFFE]/45"
         >
           Resposta rápida • Processo simples • Entrega ágil
         </motion.span>

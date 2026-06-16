@@ -15,7 +15,7 @@ export default function FAQ() {
     {
       question: "Preciso entender de tecnologia para ter um site?",
       answer:
-        "Não. Nossa função é justamente cuidar de tudo isso por você. Você nos conta sobre o seu negócio, o que faz, para quem, como quer se apresentar  e a gente transforma isso em um site. Nenhum conhecimento técnico é necessário da sua parte.",
+        "Não. Nossa função é justamente cuidar de tudo isso por você. Você nos conta sobre o seu negócio, o que faz, para quem, como quer se apresentar e a gente transforma isso em um site. Nenhum conhecimento técnico é necessário da sua parte.",
     },
     {
       question: "O que está incluído no desenvolvimento do site?",
@@ -25,7 +25,7 @@ export default function FAQ() {
     {
       question: "Meu site vai aparecer no Google?",
       answer:
-        "Todo site que desenvolvemos já sai com uma estrutura otimizada para mecanismos de busca  títulos, descrições, velocidade de carregamento e organização de conteúdo (como SEO). Isso aumenta as chances de aparecer nas buscas.",
+        "Todo site que desenvolvemos já sai com uma estrutura otimizada para mecanismos de busca — títulos, descrições, velocidade de carregamento e organização do conteúdo. Isso aumenta as chances de aparecer nas buscas.",
     },
     {
       question: "O que é SEO e por que isso importa?",
@@ -46,23 +46,29 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="w-full border-t border-[#110B24] bg-[#07040E] py-24"
+      className="relative w-full overflow-hidden border-t border-[#0A0E1A]/5 bg-[#F0FFFE] py-24"
     >
-      <div className="mx-auto max-w-3xl px-6">
+      {/* Glow background */}
+      <div className="pointer-events-none absolute left-1/2 top-0 h-75 w-125 -translate-x-1/2 rounded-full bg-[#00C9B8]/10 blur-[120px]" />
+
+      {/* Grid sutil */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,14,26,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,14,26,0.04)_1px,transparent_1px)] bg-size-[4rem_4rem]" />
+
+      <div className="relative z-10 mx-auto max-w-3xl px-6">
         {/* Header */}
         <div className="mb-16 text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#6b03f6]">
+          <span className="inline-flex rounded-full border border-[#00C9B8]/20 bg-[#00C9B8]/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#00C9B8]">
             Dúvidas Frequentes
           </span>
 
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[#F8F7FA] sm:text-4xl">
+          <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-[#0A0E1A] sm:text-4xl">
             Perguntas{" "}
-            <span className="text-[#36f631]">
+            <span className="text-[#00C9B8]">
               respondidas
             </span>
           </h2>
 
-          <p className="mt-4 text-sm text-[#A39CB5] sm:text-base">
+          <p className="mt-4 text-sm text-[#0A0E1A]/65 sm:text-base">
             Algumas dúvidas comuns antes de começar seu projeto.
           </p>
         </div>
@@ -75,10 +81,10 @@ export default function FAQ() {
             return (
               <div
                 key={item.question}
-                className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
+                className={`overflow-hidden rounded-3xl border backdrop-blur-xl transition-all duration-300 ${
                   isOpen
-                    ? "border-[#6b03f6]/30 bg-[#110B24]/40"
-                    : "border-[#110B24] bg-[#110B24]/10 hover:border-[#6b03f6]/20"
+                    ? "border-[#00C9B8]/20 bg-white/80 shadow-[0_0_40px_rgba(0,201,184,0.06)]"
+                    : "border-[#0A0E1A]/8 bg-white/60 hover:border-[#00C9B8]/15"
                 }`}
               >
                 <button
@@ -87,15 +93,15 @@ export default function FAQ() {
                   aria-controls={`faq-content-${index}`}
                   className="flex w-full items-center justify-between gap-4 p-6 text-left"
                 >
-                  <span className="text-base font-bold tracking-tight text-[#F8F7FA] sm:text-lg">
+                  <span className="text-base font-bold tracking-tight text-[#0A0E1A] sm:text-lg">
                     {item.question}
                   </span>
 
                   <div
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-all duration-300 ${
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border transition-all duration-300 ${
                       isOpen
-                        ? "border-[#36f631]/30 bg-[#07040E] text-[#36f631]"
-                        : "border-[#110B24] bg-[#07040E] text-[#A39CB5]"
+                        ? "border-[#00C9B8]/20 bg-[#00C9B8]/10 text-[#00C9B8]"
+                        : "border-[#0A0E1A]/8 bg-white text-[#0A0E1A]/50"
                     }`}
                   >
                     {isOpen ? (
@@ -115,7 +121,7 @@ export default function FAQ() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="border-t border-[#110B24]/60 px-6 pb-6 pt-4 text-sm leading-relaxed text-[#A39CB5] sm:text-base">
+                    <p className="border-t border-[#0A0E1A]/6 px-6 pb-6 pt-4 text-sm leading-relaxed text-[#0A0E1A]/70 sm:text-base">
                       {item.answer}
                     </p>
                   </div>
