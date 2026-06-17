@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex shrink-0 items-center">
               <Image
-                src="/logodarknobg.png"
+                src="/logodark.png"
                 alt="Next Commerce Logo"
                 width={150}
                 height={150}

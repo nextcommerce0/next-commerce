@@ -29,6 +29,12 @@ export default function Gallery() {
       image: "/barbershop.png",
       link: "https://template-barbershop-rust.vercel.app/",
     },
+    {
+      title: "Reflect Studio",
+      category: "Fotografia",
+      image: "/photographer.png",
+      link: "https://template-photographer-psi.vercel.app/",
+    },
   ];
 
   const projetosDuplicados = [
