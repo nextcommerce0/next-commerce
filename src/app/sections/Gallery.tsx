@@ -35,6 +35,18 @@ export default function Gallery() {
       image: "/photographer.png",
       link: "https://template-photographer-psi.vercel.app/",
     },
+    {
+      title: "Tristero",
+      category: "Tatuagem",
+      image: "/tatto.png",
+      link: "https://template-tatto.vercel.app/",
+    },
+    {
+      title: "Dr. Alex Silva",
+      category: "Psicologia",
+      image: "/terapeuta.png",
+      link: "https://template-therapist.vercel.app/",
+    },
   ];
 
   const projetosDuplicados = [
@@ -61,16 +73,13 @@ export default function Gallery() {
 
         <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-[#0A0E1A] sm:text-4xl">
           Alguns projetos que saíram do{" "}
-          <span className="text-[#00C9B8]">
-            papel
-          </span>
-          .
+          <span className="text-[#00C9B8]">papel</span>.
         </h2>
 
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#0A0E1A]/70">
           Cada projeto foi pensado para oferecer uma experiência de navegação
-          clara, moderna e bem estruturada. Explore os projetos e veja como
-          cada solução foi construída na prática.
+          clara, moderna e bem estruturada. Explore os projetos e veja como cada
+          solução foi construída na prática.
         </p>
       </div>
 
