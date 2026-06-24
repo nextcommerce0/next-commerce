@@ -50,7 +50,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/nextcommerce0"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

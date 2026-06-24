@@ -35,17 +35,18 @@ export default function Gallery() {
       image: "/photographer.png",
       link: "https://template-photographer-psi.vercel.app/",
     },
-    {
-      title: "Tristero",
-      category: "Tatuagem",
-      image: "/tatto.png",
-      link: "https://template-tatto.vercel.app/",
-    },
+    
     {
       title: "Dr. Alex Silva",
       category: "Psicologia",
       image: "/terapeuta.png",
       link: "https://template-therapist.vercel.app/",
+    },
+    {
+      title: "Tristero",
+      category: "Tatuagem",
+      image: "/tatto.png",
+      link: "https://template-tatto.vercel.app/",
     },
   ];
 

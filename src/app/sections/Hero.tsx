@@ -7,7 +7,6 @@ export default function Hero() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // Movimento suave da energia
   const springX = useSpring(mouseX, {
     stiffness: 65,
     damping: 18,
@@ -22,10 +21,8 @@ export default function Hero() {
     const rect = e.currentTarget.getBoundingClientRect();
 
     const x = e.clientX - rect.left - rect.width / 2;
-
     const y = e.clientY - rect.top - rect.height / 2;
 
-    // Energia percorre quase todo o hero
     mouseX.set(x * 0.7);
     mouseY.set(y * 0.7);
   }
@@ -42,7 +39,7 @@ export default function Hero() {
       className="relative w-full overflow-hidden bg-[#F0FFFE] pb-20 pt-20 md:pb-28 md:pt-24"
     >
       {/* GRID BACKGROUND */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,14,26,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,14,26,0.06)_1px,transparent_1px)] bg-size-[4rem_4rem]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,14,26,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,14,26,0.06)_1px,transparent_1px)] bg-size-4rem_4rem" />
 
       {/* ENERGIA INTERATIVA */}
       <motion.div
@@ -150,11 +147,14 @@ export default function Hero() {
           Seu negócio merece um site tão profissional quanto o que você <br />
           <span
             className="
-    relative inline-block
-    text-[#00C9B8]
-    [-webkit-text-stroke:1.0px_rgba(255,255,255,0.9)]
-    [text-shadow:0_0_0_rgba(255,255,255,0)]
-  "
+              relative
+              text-[#00C9B8]
+              [-webkit-text-stroke:0.9px_rgba(255,255,255,0.95)]
+              [paint-order:stroke_fill]
+              [text-shadow:0_0_0_rgba(255,255,255,0)]
+              [-webkit-font-smoothing:antialiased]
+              [text-rendering:geometricPrecision]
+            "
           >
             oferece
           </span>

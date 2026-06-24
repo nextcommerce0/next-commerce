@@ -30,11 +30,11 @@ export default function Header() {
           : "border-[#00C9B8]/15 bg-[#F0FFFE]/95"
       }`}
     >
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-24 lg:px-8">
         {/* LOGO */}
         <Link
           href="/"
-          className="relative flex h-16 w-55 shrink-0 items-center"
+          className="relative flex h-12 w-40 shrink-0 items-center sm:h-14 sm:w-48 lg:h-16 lg:w-55"
         >
           {/* LOGO CLARA */}
           <Image
@@ -95,11 +95,11 @@ export default function Header() {
             href="https://wa.me/5511923736213"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center gap-2 rounded-full bg-[#00C9B8] px-6 py-3 text-sm font-bold text-[#0A0E1A] shadow-[0_0_25px_rgba(0,201,184,0.25)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(0,201,184,0.4)]"
+            className="group inline-flex h-11 items-center justify-center gap-1.5 rounded-full bg-[#00C9B8] px-4 text-[13px] font-bold text-[#0A0E1A] shadow-[0_0_20px_rgba(0,201,184,0.22)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(0,201,184,0.38)] sm:h-12 sm:gap-2 sm:px-5 sm:text-sm lg:px-6"
           >
-            Falar com a Next
+            <span className="whitespace-nowrap">Falar com a Next</span>
 
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 sm:h-4 sm:w-4" />
           </a>
         </div>
       </div>

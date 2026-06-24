@@ -81,7 +81,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph.png",
         width: 1200,
         height: 630,
         alt: "Next Commerce",
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     title: "Next Commerce | Sites Profissionais",
     description:
       "Sites modernos, rápidos e profissionais para negócios que levam a sério sua imagem.",
-    images: ["/og-image.png"],
+    images: ["/opengraph.png"],
   },
 
   icons: {
